@@ -12,7 +12,7 @@ export const CustomPokemonProvider = ({ children }) => {
     setLoading(true);
     setError('');
     try {
-      const { data } = await axios.get('http://localhost:5000/api/v1/custom-pokemon');
+      const { data } = await axios.get('api/v1/custom-pokemon');
       setCustomPokemonList(data);
     } catch (error) {
       console.error('Error fetching Custom Pokémon:', error);

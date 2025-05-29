@@ -27,7 +27,7 @@ const EditCustomPokemonModal = ({ isOpen, onClose, pokemon, onSave }) => {
         imageUrl: formData.imageUrl.trim(),
       };
 
-      await axios.put(`http://localhost:5000/api/v1/custom-pokemon/${pokemon._id}`, updatedData);
+      await axios.put(`api/v1/custom-pokemon/${pokemon._id}`, updatedData);
 
       onSave();
       onClose();

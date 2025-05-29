@@ -56,14 +56,11 @@ const AddCustomPokemonModal = ({ isOpen, onClose }) => {
       setUrl(imageUrl);
       setPokemon((prev) => ({ ...prev, imageUrl }));
 
-      const { data: pokemonData } = await axios.post(
-        'http://localhost:5000/api/v1/custom-pokemon',
-        {
-          name: pokemon.name,
-          types: pokemon.types.filter((type) => type !== ''),
-          imageUrl,
-        }
-      );
+      const { data: pokemonData } = await axios.post('api/v1/custom-pokemon', {
+        name: pokemon.name,
+        types: pokemon.types.filter((type) => type !== ''),
+        imageUrl,
+      });
 
       setPokemon({ name: '', types: ['', ''], imageUrl: '' });
       setImage(null);

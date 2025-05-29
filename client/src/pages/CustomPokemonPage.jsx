@@ -35,7 +35,7 @@ const CustomPokemonPage = () => {
 
     setDeleteStatus({ loading: true, error: '', success: '' });
     try {
-      await axios.delete(`http://localhost:5000/api/v1/custom-pokemon/${id}`);
+      await axios.delete(`api/v1/custom-pokemon/${id}`);
       setDeleteStatus({
         loading: false,
         error: '',
